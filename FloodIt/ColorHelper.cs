@@ -9,6 +9,8 @@ namespace FloodIt
 {
     internal static class ColorHelper
     {
+        private static Random _rnd = new Random();
+
         public static Color[] Colors = new Color[]
         {
             Color.Green,
@@ -20,5 +22,10 @@ namespace FloodIt
             Color.CornflowerBlue,
             Color.Purple
         };
+
+        public static Color RandomColor(int numColors)
+        {
+            return Colors[_rnd.Next(numColors)];
+        }
     }
 }

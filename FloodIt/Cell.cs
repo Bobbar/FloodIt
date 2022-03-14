@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace FloodIt
 {
-    internal class Cell
+    public class Cell
     {
         public bool IsFilled { get; set; } = false;
         public bool Visited { get; set; } = false;
@@ -19,6 +19,15 @@ namespace FloodIt
         public Color OGColor { get; set; } = Color.White;
         public int SideLen { get; set; } = 0;
         public Cell[] Neighbors { get; set; } = new Cell[4];
+
+        public Cell(Point gridIdx, Color color)
+        {
+            //Position = new Point(gridIdx.X * sideLen, gridIdx.Y * sideLen);
+            GridIdx = gridIdx;
+            Color = color;
+            OGColor = color;
+        }
+
 
         public Cell(Point gridIdx, Color color, int sideLen)
         {
